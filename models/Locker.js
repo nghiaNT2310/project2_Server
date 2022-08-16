@@ -7,7 +7,11 @@ const LockerSchema=new Schema({
         ref: 'ControlDevice'
     },
     label: String,
-    stt: Number
+    stt: Number,
+    user:{
+        type: String,
+        default: ""
+    }
 })
 
 module.exports=mongoose.model('Locker',LockerSchema)

@@ -11,11 +11,22 @@ router.get('/tk',async(req,res)=>{
         var cntLocker=await Locker.count({label:{$ne: ""}})
         var ul=await UL.find({});
         var arrUser=[],arrLocker=[];
+        console.log(ul)
         ul.forEach(item=>{
-            if(!arrUser.includes(item.userId)) arrUser.push(item.userId);
+            let check1=true,check2=true;
+            for(let i=0;i<arrUser.length;i++){
+                if(arrUser[i]==item.userId) check1=false;
+                //console.log(arrUser[i],item.userId,check1)
+            }
+            if(check1) arrUser.push(item.userId);
+        
+            
             if(!arrLocker.includes(item.lockerId)) arrLocker.push(item.lockerId);
+           
         })
-        console.log()
+       
+        
+
         res.json({
             cntUser: cntUser,
             cntLocker:cntLocker,

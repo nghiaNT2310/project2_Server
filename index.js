@@ -23,8 +23,8 @@ app.use( function(req, res, next) {
 // connect to database 
 async function connect() {
     try {
-        //await mongoose.connect('mongodb://localhost/smartLocker', {
-            await mongoose.connect('mongodb+srv://nghiango:nghiango23102001@cluster0.pjnmw.mongodb.net/IOT?retryWrites=true&w=majority', {
+       // await mongoose.connect('mongodb://localhost/smartLocker', {
+        await mongoose.connect('mongodb+srv://nghiango:nghiango23102001@cluster0.pjnmw.mongodb.net/IOT?retryWrites=true&w=majority', {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
